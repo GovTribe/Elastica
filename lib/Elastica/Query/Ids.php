@@ -1,7 +1,7 @@
 <?php
 namespace Elastica\Query;
 
-use Elastica\Type;
+use Elastica\Type as ElasticaType;
 
 /**
  * Ids Query.
@@ -56,7 +56,7 @@ class Ids extends AbstractQuery
      */
     public function addType($type)
     {
-        if ($type instanceof Type) {
+        if ($type instanceof ElasticaType) {
             $type = $type->getName();
         } elseif (empty($type) && !is_numeric($type)) {
             // A type can be 0, but cannot be empty
@@ -77,7 +77,7 @@ class Ids extends AbstractQuery
      */
     public function setType($type)
     {
-        if ($type instanceof Type) {
+        if ($type instanceof ElasticaType) {
             $type = $type->getName();
         } elseif (empty($type) && !is_numeric($type)) {
             // A type can be 0, but cannot be empty
